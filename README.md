@@ -1,4 +1,4 @@
-# Pandora'sNetwork
+# Pandora's Network
 
 Pandora's Network is an online puzzle game I developed in NodeJS/Express. You play as a system administrator who needs to root out a sentient virus from their computer network. This game was created as part of the WANIC Cybersecurity Course, which I took July 2017.
 
