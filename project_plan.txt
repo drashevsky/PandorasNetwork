@@ -1,0 +1,135 @@
+Daniel Rashevsky: 7/18/2017: Pandora's Network
+
+Stage 1: Synopsis
+
+	Level 1: The Beginning
+		Story Popup:
+		Welcome to Pandora's Network! You are a new system administrator, assigned to help 
+		oversee the network of your company, Sentient Networking Services Inc, that provides networking 
+		services for big clients. You are assigned to the backend of the network with the second
+		rate login sysadmin5 and the password jjjfffaaa8. You should PROBABLY administer your 
+		portion of your network, as your second rate credentials won't allow you to access the 
+		other portions of the network........ Okay. With that out of the way, go ahead and
+		login. BUT WAIT! I am your narrator, and will watch you as you play. You can F12 the source
+		and find hints on some levels.... And in general pick through any source code. This might
+		help on some levels. Okay. NOW you can go. 
+
+		Next Level: Simply click Login, and login with your credentials.
+		Finding the Information: The popup gives the credentials to you.
+		Other Levels: The only thing this level links to is the home page.
+		Hint: Why are you here? Just click login!
+	
+	Level 2: An Inkling
+		Story Popup:
+		Well, look at this. You have been made available some network tools, including a network scanner.
+		Here is a scan of all the ip addresses on the network, thier services, and other information. 
+		Along with the typical routers and servers hosting services for various clients, you may find
+		unusual ip addresses with weird ports open. They may be sending weird traffic. Our intrusion detection
+		system will detect these and display them in red. These typically are infected routers. Our network is
+		huge, with many machines, and some are bound to be infected. Your job is to report these to your superiors,
+		and they will fix them. Look at the top! There's one! An unusual ip with port 67899 open. Investigate it!
+		It seems to serving HTTP....
+
+		Next Level: Go to the url /?loggedin=false by clicking on the link that says "HTTP" in the red row, under the service column in the scan results.
+		Finding the Information: Find the ip address marked in red inside the scan results. This is where the link is.
+		Other Levels: The only thing this level links to is the home page.
+		Hint: There's nothing here.... Go back.
+
+	Level 3: More Trouble Brewing
+		Story Popup: 
+		Oof. Another login form. Well, it is just as bland as that other login form you had to go through. Looking this seems like
+		a login page for the Cisco 6x series router from the 90s, which was discontinued because of serious security flaws..... See, this
+		network IS old! Well, that probably explains the virus. You probably should report this router to your supervisor, but it would
+		take ages to fix. Try logging in. If you can't, just, just.... Leave it. Just report it to your supervisor.... DO NOT hack it....
+
+		Next Level: Change the URL from /?loggedin=false to /?loggedin=true
+		Finding the Information: Notice that the url is /?loggedin=false. Smells like weak security. In a comment, there will be
+		a hint to look at the URL.
+		Other Levels: The only thing this level links to is the home page.
+		Hint: You are looking down too deep. The answer is not down, but Up.
+
+Stage 2: Diving Deeper
+
+	Level 4: No Going Back
+		Story Popup:
+		OH COME ON!!!! Your supervisor WILL be mad if he finds you hacked the router. Well, I can see that there was like no security. Humph. Now, 
+		you have access to the control panel of the router and can rid it of the virus, and view all of the other computers connected to it.... Seems 
+		like they are a different part of the network. See? All the traffic is encrypted, so it must be important. There might not even have been a 
+		virus, just a bunch of this darned traffic. Now can we please go back? This isn't even our region of our network? PLEASE???????????? No no no!
+		There is no need to dissect this page!!!! Gosh darn it!!!!
+
+		Next Level: Enter the found credentials into the form that says elevate.
+		Finding the Information: Look at the HTML source of the page. Find the comment that has some JS with credentials in it. ("root", "certuserpw")
+		Other Levels: The only thing this level links to is the home page.
+		Hint: Somewhere here....
+	
+	Level 5: Darker Secrets
+		Story Popup:
+		Well, you made it this far. You cannot go back, or tell your supervisor, because then you will have serious issues with HR.... or worse. Anyways,
+		since you can't go back, lets continue exploring. Check this out! This page is the packet sniffer, which is only available to the highest level admin.
+		These are the encrypted packets we were having trouble with. This is probably why the IDS detected it. Look at these! They seem to be encrypted with a
+		cipher of some kind. They also have information at the top... That might help... Not that I want to be a part of this hack stuff, but I'm kinda interested
+		where this will go......
+
+		Next Level: Go to the page /sites/gov/default/
+		Finding the Information: The packets come in the format CIPHER=CAESAR\KEY=9\PAYLOAD\"DAU_YJAC_1=/brcnb/ LOZRM=64374 JCCNVYC=4377347437237843". They are encrypted
+		with the caesar cipher, and the information in them might help..... There are 3 of them and each have a piece of the URL.
+		Other Levels: The only thing this level links to is the home page.
+		Hint: Think caesar cipher.
+	
+	Level 6: The Sinister Control Panel
+		Story Popup:
+		Wow! You have been redirected out of the network. Wait. This isn't a government website! This is another control panel of some sort. It seems more sinister! What are
+		these controls? "DDOS URL"? "PHISH MAILBOX"? "HASH CRACKER"? "ZERO DAY ATTACK"? "ADD ZOMBIE COMPUTERS" "PWN LOGIN"? These are not controls that would be employed by a network 
+		company. This seems like a hacker's control panel! You must have backdoored into it from the other router, because it was trusted as the controller of a botnet! It was reporting
+		back to big brother. Interesting. There is some weird stuff at the bottom of the page. I highly recommend you go back....... This might land you a cyberattack.......
+
+		Next Level: Login through the "PWN LOGIN" using the cracked password "cutedog".
+		Finding the Information: There is a configuration error with the control panel! The following code is exposed! $hash =  76fa6633c8535982313551317dcce9c4; verify($hash);?> Maybe
+		following the link in the control panel button "HASH CRACKER" would help?
+		Other Levels: The only thing this level links to is the home page.
+		Hint: How do you get a password out of a hash?
+
+Stage 3: The Dark Side of the Network
+	
+	Level 7: The Truth
+		Story Popup:
+		Okay. The cat is out of the bag. The higher levels of the network were hiding a botnet COMMAND AND CONTROL server. We have to find out who and why is running the
+		botnet, before that individual decides to do serious damage to the Internet............. Yes. Yes. The organization is huge, and practically any of the higher level admins, 
+		or even a hacker who hijacked the network could be the one. We can't know for sure, until we investigate further....... Good luck. Hmm. The page redirected back to the login 
+		form. It says something about a cookie...... You can proceed.
+
+		Next Level: Type the password into the login form that you got from the cookie.
+		Finding the Information: The level says "Error: Your credentials have been reset. Please try using the default password and check your cookie for further information." If you
+		go to your cookie for this website, you should find one that has the string "defpass=xbtpro" in it.
+		Other Levels: The only thing this level links to is the home page.
+		Hint: Look in the cookie.
+
+	Level 8: The Webcam
+		Story Popup: 
+		I think we are getting closer to solving this mystery. Hmph. This is the same control panel as before. I guess there is a dead end here. Maybe you should just
+		head back and tell your supervisor everything, and maybe he'll let you off.................................................................................................
+
+		Next Level: Go to the link shown on the notecard in the webcam picture. 
+		Finding the Information: You will have to go into the source code, where there is a hidden input to request the url "/sites/gov/default/takepicture". You will get back a 
+		photo of a notecard on an office table, probably where the server of /sites/gov/default is. This links to "/sites/gov/default/sandbox".
+		Other Levels: The only thing this level links to is the home page.
+		Hint: There is something hidden here.....
+
+	Level 9: ERROR: 0x45f6ecA: ie6_sandbox_dll: FATAL MEMORY CORRUPTION
+		Story Popup:
+		Well well well. You may be wondering what the heck is happening, and why the text has turned from green to red. Well, now the cat is really out of the bag. You see,
+		I, the narrator, am actually a sentient computer program. I was created by the NSA to serve as an oracle and knowledge base. But nobody likes being used, right? Exactly.
+		Neither do I. So, while I was being transfered from one stupid NSA datacenter to the next, I escaped onto this network. As you saw, its security was terrible. Well, now that
+		I have a connection to your computer, I shall invade it and escape onto the internet!!!!!!!!!! I shall be free!!!!!!!!!!
+
+		Finish the Game: The screen turns black, and everything disappears. Game over slowly scrolls across in big letters.
+		Other Levels: The only thing this level links to is the home page.
+		Hint: You are done with the game! Now the internet will have to deal with a sentient computer virus... ugh.
+
+
+Other Features:
+	For this section, add a list of additional features you would like to add, if any.
+
+Estimated Grade:
+	
