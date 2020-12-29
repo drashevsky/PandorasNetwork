@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%if (title) {%><%=title%><%}%></title>
+        <link href="/css/site.css" rel="stylesheet"/>
+        <script src="/script/index.js"></script>
+    </head>
+    <body>
+        <div id="hud">
+            <div id="title" class="hud-div">PANDORA'S NETWORK</div>
+            <div class="hud-div"><%if(stage) {if(level) {point="->"%><%=point%><%}}%></div>
+            <div class="hud-div">
+                <p class="hud-progress"><%if(stage) {%><%point="STAGE: "%><%=point%><%=stage%><%}%></p>
+                <p class="hud-progress"><%if(level) {%><%point="LEVEL: "%><%=point%><%=level%><%}%></p>
+            </div>
+            <div class="hud-div">-></div>
+            <div class="hud-div"><a style="color: #00FF00;" href="/escape">GO HOME</a></div>
+            <div class="hud-div">-></div>
+            <div class="hud-div"><a style="color: #00FF00;" onclick="enterNarrator()" href="#">NARRATOR</a></div>
+            <div class="hud-div">-></div>
+            <div class="hud-div">
+                <p class="hud-progress credit">Daniel Rashevsky</p>
+                <p class="hud-progress credit">Copyright 2017</p>
+            </div>
+            <div id="narrator-wrapper">
+                <div id="narrator-head">
+                    <div id="narrator-head-text">NARRATOR - <a style="color: #00FF00;" onclick="exitNarrator()" href="#">Exit</a></div>
+                </div>
+                <div id="narrator">
+                    <div id="narrator-text">
+                        <%if(narrString) {%><%=narrString%><%}%>
+                        <span id="cursor">|</span>
+                        <br>
+                        <span style="color: red;"><%if(errString) {%><%=errString%><%}%></span>
+                    </div>
+                </div>
+            </div>
+            <div id="login-tab"><%var text="Logged In"%><%if(levelNum){%><%=text%><%}%><%var text="Not Logged In"%><%if(!levelNum){%><%=text%><%}%></div>
+        </div>
+        <div id="body">
+            <%if (levelNum == 0) {%><%-include('login.html')%><%}%>
+            <%if (levelNum == 1) {%><%-include('level1.html')%><%}%>
+            <%if (levelNum == 2) {%><%-include('level2.html')%><%}%>
+            <%if (levelNum == 3) {%><%-include('level3.html')%><%}%>
+            <%if (levelNum == 4) {%><%-include('level4.html')%><%}%>
+            <%if (levelNum == 5) {%><%-include('level5.html')%><%}%>
+            <%if (levelNum == 6) {%><%-include('level6.html')%><%}%>
+            <%if (levelNum == 7) {%><%-include('level7.html')%><%}%>
+            <%if (levelNum == 8) {%><%-include('level8.html')%><%}%>
+            <%if (levelNum == 9) {%><%-include('level9.html')%><%}%>
+            <%if (levelNum == 10) {%><%-include('adduser.html')%><%}%>
+        </div>
+    </body>
+</html>

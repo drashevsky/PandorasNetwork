@@ -1,0 +1,26 @@
+<style>
+    #field {
+        font-family: "Courier";
+        color: #00FF00;
+    }
+
+    .btn, #user, #pass {
+        background-color: black;
+        color: #00FF00;
+        border: 1px solid #00FF00;
+        font-family: "Courier";
+    }
+
+    a {
+        color: #00FF00;
+    }
+</style>
+<div id="field">
+    <h1>PANDORA'S NETWORK</h1>
+    <form method="post" action="/login">
+        <p>Username: <input type="text" name="username" id="user" placeholder="Username"></input></p>
+        <p>Password: <input type="password" name="password" id="pass" placeholder="Password"></input></p>
+        <input type="submit" value="Login" class="btn"></input>
+        <a href="/adduser">Create Account</a>
+    </form>
+</div>

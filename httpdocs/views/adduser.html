@@ -1,0 +1,28 @@
+<style>
+    #field {
+        font-family: "Courier";
+        color: #00FF00;
+    }
+
+    .btn, #user, #pass, #email {
+        background-color: black;
+        color: #00FF00;
+        border: 1px solid #00FF00;
+        font-family: "Courier";
+    }
+
+    a {
+        color: #00FF00;
+    }
+</style>
+
+<div id="field">
+    <h1>Add A User</h1>
+    <form method="post" action="/adduser">
+        <p>Username: <br> <input type="text" name="username" id="user"></input></p>
+        <p>Email: <br> <input type="email" name="email" id="email"></input></p>
+        <p>Password: <br> <input type="password" name="password" id="pass"></input></p>
+        <p>Password Confirm: <br> <input type="password" name="passwordconf" id="pass"></input></p>
+        <input type="submit" value="Add User" class="btn"></input>
+    </form>
+</div>
