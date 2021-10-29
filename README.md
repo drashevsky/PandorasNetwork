@@ -2,6 +2,9 @@
 
 Pandora's Network is an online puzzle game I developed in NodeJS/Express. You play as a system administrator who needs to root out a sentient virus from their computer network. This game was created as part of the WANIC Cybersecurity Course, which I took July 2017.
 
+![Game start](The%20Beginning.png)
+![A scene in the game](An%20Inkling.png)
+
 ## Running the Game
 
 To run this game, make sure you have ```npm```, ```node```, ```git```, and ```mongodb``` installed. Then, clone this repo. Once you have the repo, run ```npm install``` to fetch all the dependencies. 
